@@ -1,0 +1,424 @@
+/* ---------------------Custom Properties---------------------*/
+:root{
+  --ppal-light-color: #fff;
+  --ppal-color: #383837;
+  --ppal-color-hover: #111010;
+  --sec-color: #f0b530;
+  --third-color: #4c2882;
+  --font-color: #fff;
+  --font-ppal: 'Raleway', sans-serif;
+  --font-sec: 'Bebas Neue', cursive;
+  --max-width: 1200px;
+  --clippy: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%);
+  /* --font-third: 'Fjalla One', sans-serif; */
+}
+/* ---------------------Reset--------------------- */
+html {
+  box-sizing: border-box;
+  font-family: var(--font-ppal);
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: var(--ppal-color-hover);
+  background-color: var(--ppal-light-color);
+}
+
+a {
+  color: var(--sec-color);
+  text-decoration: none;
+  transition: all .5s ease-out;
+}
+
+a:hover{
+  opacity: 0.75;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* ---------------------Components--------------------- */
+
+/*____________________Menu____________________ */
+.menu {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-out;
+  background-color: var(--ppal-color-hover);
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu a {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--sec-color);
+}
+
+.menu-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--sec-color);
+  background-color: var(--ppal-color-hover);
+}
+
+.menu-button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: var(--sec-color);
+}
+
+@media screen and (min-width: 768px) {
+  
+}
+
+@media screen and (min-width: 1024px) {
+  .menu-button {
+    display: none;
+  }
+  /* No podia posicionar los elementos del menu en el header, creo que es problema del container */
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .menu {
+    position: static;
+    width: 100%;
+    margin-left: 10%;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .menu a {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+  .menu a:hover {
+    background-color: transparent;
+  }
+
+}
+
+/* ____________________ Home ____________________ */
+.home {
+  background-image: url(assets/imgs/background-forest.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.home .welcome {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.3rem;
+  font-size: 5rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--ppal-color-hover), var(--sec-color));
+  mix-blend-mode: screen;
+}
+
+.welcome-logo{
+  position: absolute;
+  top: 62%;
+  width: 100%;
+  height: 38%;
+  opacity: 0.1;
+  text-align: center;
+  perspective: 10rem;
+}
+/* ____________________ Aboutme ____________________ */
+
+.aboutme {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-width);
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.presentation {
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+}
+
+.aboutme-name {
+  position: relative;
+  font-size: 3rem;
+  font-weight: 700;
+  width: 100%;
+  z-index: 100;
+  text-align: center;
+  padding: 2rem 1rem 0.3rem 1rem;
+}
+
+.aboutme-name::before{
+  content: "";
+  width: 100%;
+  height: 60%;
+  display: block;
+  position: absolute;
+  top: 2rem; /* por el margin top */
+  right: 0;
+  z-index: -1;
+  background-color: #d8737fb9;
+  clip-path: var(--clippy);
+  transition: clip-path 2s;
+}
+
+.aboutme-name:hover::before{
+  clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0 100%);
+}
+
+.aboutme-dev {
+  position: relative;
+  font-size: 1.3rem;
+  z-index: 100;
+  text-align: center;
+}
+
+.aboutme-name:hover + .aboutme-dev{
+  color: var(--ppal-light-color);
+  transition: color 0.5s 1.7s linear;
+}
+
+.aboutme-dev::before{
+  content: "";
+  width: 100%;
+  height: 110%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #475c7a;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: clip-path 2s;
+}
+
+.aboutme-name:hover + .aboutme-dev::before{
+  clip-path: polygon(0 0, 100% 0%, 90% 100%, 10% 100%);
+  transition: clip-path 1.5s 1.5s;
+}
+
+.aboutme-icons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.aboutme-icons .fa-brands{
+  position: relative;
+  margin: 0 0.2em;
+  font-size: 2.5rem;
+  padding: 0 0.4em;
+}
+
+.aboutme-icons .icon__html5{
+  position: absolute;
+  left: 18%;
+  top: 10%;
+  width: 3px;
+  height: 80%;
+  background-color: #f06529;
+  transform: scale(0);
+  transform: left top;
+  transition: 0.75s 2s;
+}
+
+.aboutme-icons .icon__css3{
+  position: absolute;
+  left: 25%;
+  bottom: -5%;
+  width: 50%;
+  height: 3px;
+  background-color: #264de4;
+  transform: scale(0);
+  transform: left bottom;
+  transition: 0.75s 2s;
+}
+
+.aboutme-icons .icon__js{
+  position: absolute;
+  right: 15%;
+  top: 10%;
+  width: 3px;
+  height: 80%;
+  background-color: #ffff00;
+  transform: scale(0);
+  transform: right top;
+  transition: 0.75s 2s;
+}
+
+.aboutme-name:hover ~ .aboutme-icons .icon{
+  transform: scale(1);
+}
+
+p {
+  padding: 0.3rem 2rem;
+  max-width: 75ch;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.button-cv {
+  display: block;
+  font-family: var(--font-sec);
+  font-size: 1.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--ppal-color-hover);
+  transform: scale(1);
+  transition: background-color 0.5s ease-out, transform 0.2s ease-out;
+}
+
+.button-cv:hover {
+  background-color: var(--sec-color);
+  transform: scale(1.05);
+}
+
+.button-cv a {
+  display: block;
+  width: 100%;
+}
+
+.button-cv a:hover {
+  color: var(--ppal-color-hover);
+}
+
+.aboutme-img {
+  margin-top: 2rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 70%;
+  height: auto;
+}
+
+
+/* ---------------------Utilities--------------------- */
+.box-shadow-1 {
+  box-shadow: 0.2rem 0.2rem 0.5rem var(--ppal-color);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+
+.menu-button .none {
+  display: none;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 5rem;
+  padding: 1rem;
+  background-color: var(--ppal-color-hover);
+}
+
+.container > .menu-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img{
+  margin-top: 0;
+  width: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  
+}
+@media sreen and (min-width: 1024px) {
+  .header {
+    padding: 0.5rem;
+  }
+
+}
+/* ---------------------Site Style--------------------- */
