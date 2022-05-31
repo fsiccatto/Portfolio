@@ -4,7 +4,7 @@
   --ppal-color: #383837;
   --ppal-color-hover: #111010;
   --sec-color: #f0b530;
-  --third-color: #4c2882;
+  --third-color: #183153;
   --font-color: #fff;
   --font-ppal: 'Raleway', sans-serif;
   --font-sec: 'Bebas Neue', cursive;
@@ -182,7 +182,7 @@ p {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1.3rem;
-  font-size: 5rem;
+  font-size: 7.5vw;
   font-weight: 700;
   background: linear-gradient(to right, var(--ppal-color-hover), var(--sec-color));
   mix-blend-mode: screen;
@@ -199,6 +199,7 @@ p {
 }
 /* ____________________ Aboutme ____________________ */
 
+/* ___Titulo___ */
 .aboutme {
   display: flex;
   flex-direction: column;
@@ -329,6 +330,7 @@ p {
   transform: scale(1);
 }
 
+/* ___Parrafos___ */
 p {
   padding: 0.3rem 2rem;
   max-width: 75ch;
@@ -366,6 +368,7 @@ p {
   color: var(--ppal-color-hover);
 }
 
+/* ___Img___ */
 .aboutme-img {
   margin-top: 2rem;
   margin-right: auto;
@@ -374,6 +377,56 @@ p {
   height: auto;
 }
 
+/* ___Hobbies___ */
+.aboutme-hobbies {
+  margin: 1rem .5rem 0;
+  display: grid;
+  gap: .5rem;
+  margin-right: auto;
+  margin-left: auto;
+  grid-template-columns: minmax(15rem, 25rem);
+  grid-template-rows: auto;
+}
+
+.hobbie {
+  padding: .2rem .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: .5rem;
+  background-color: var(--sec-color);
+}
+
+.hobbie > .hobbie-img {
+  margin: .5rem 1rem;
+  max-width: 3.5rem;
+  height: 3.5rem;
+  border-radius: .5rem;
+  background-color: var(--third-color);
+}
+
+.hobbie-img {
+  padding: .7rem;
+  fill: var(--font-color);
+  height: auto;
+}
+
+.hobbie > h4{
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-sec);
+  letter-spacing: 2px;
+}
+
+.hobbie-description{
+  margin: 0.2rem 0;
+  padding: 0 1rem 1rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--ppal-color-hover);
+}
 
 /* ---------------------Utilities--------------------- */
 .box-shadow-1 {
@@ -413,12 +466,17 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-  
+  .aboutme-hobbies {
+    grid-template-columns: repeat(2, minmax(15rem, 25rem));
+  }
 }
-@media sreen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
+  .aboutme-hobbies {
+    grid-template-columns: repeat(4, minmax(15rem, 1fr));
+  }
+
   .header {
     padding: 0.5rem;
   }
-
 }
 /* ---------------------Site Style--------------------- */
