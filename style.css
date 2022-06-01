@@ -1,10 +1,10 @@
 /* ---------------------Custom Properties---------------------*/
 :root{
   --ppal-light-color: #fff;
-  --ppal-color: #383837;
-  --ppal-color-hover: #111010;
+  --ppal-color: #111010;
   --sec-color: #f0b530;
   --third-color: #183153;
+  --fourth-color: #f0b530;
   --font-color: #fff;
   --font-ppal: 'Raleway', sans-serif;
   --font-sec: 'Bebas Neue', cursive;
@@ -30,7 +30,7 @@ body{
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  color: var(--ppal-color-hover);
+  color: var(--ppal-color);
   background-color: var(--ppal-light-color);
 }
 
@@ -98,7 +98,7 @@ p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease-out;
-  background-color: var(--ppal-color-hover);
+  background-color: var(--ppal-color);
 }
 
 .menu.is-active {
@@ -119,7 +119,7 @@ p {
   border: none;
   cursor: pointer;
   color: var(--sec-color);
-  background-color: var(--ppal-color-hover);
+  background-color: var(--ppal-color);
 }
 
 .menu-button svg {
@@ -184,7 +184,7 @@ p {
   letter-spacing: 1.3rem;
   font-size: 7.5vw;
   font-weight: 700;
-  background: linear-gradient(to right, var(--ppal-color-hover), var(--sec-color));
+  background: linear-gradient(to right, var(--ppal-color), var(--sec-color));
   mix-blend-mode: screen;
 }
 
@@ -349,12 +349,13 @@ p {
   outline: none;
   border: none;
   border-radius: 0.5rem;
-  background-color: var(--ppal-color-hover);
+  background-color: var(--ppal-color);
   transform: scale(1);
   transition: background-color 0.5s ease-out, transform 0.2s ease-out;
 }
 
 .button-cv:hover {
+  box-shadow: 2px 2px 4px 2px var(--ppal-color);
   background-color: var(--sec-color);
   transform: scale(1.05);
 }
@@ -365,7 +366,7 @@ p {
 }
 
 .button-cv a:hover {
-  color: var(--ppal-color-hover);
+  color: var(--ppal-color);
 }
 
 /* ___Img___ */
@@ -375,13 +376,14 @@ p {
   margin-left: auto;
   width: 70%;
   height: auto;
+  border-radius: 0.5rem;
 }
 
 /* ___Hobbies___ */
 .aboutme-hobbies {
   margin: 1rem .5rem 0;
   display: grid;
-  gap: .5rem;
+  gap: 1rem;
   margin-right: auto;
   margin-left: auto;
   grid-template-columns: minmax(15rem, 25rem);
@@ -395,6 +397,7 @@ p {
   justify-content: center;
   align-items: center;
   border-radius: .5rem;
+  box-shadow: 2px 2px 1px 6px var(--ppal-color);
   background-color: var(--sec-color);
 }
 
@@ -403,6 +406,7 @@ p {
   max-width: 3.5rem;
   height: 3.5rem;
   border-radius: .5rem;
+  box-shadow: 2px 2px 2px 2px var(--ppal-color);
   background-color: var(--third-color);
 }
 
@@ -425,8 +429,17 @@ p {
   padding: 0 1rem 1rem;
   font-weight: 300;
   text-align: center;
-  color: var(--ppal-color-hover);
+  color: var(--ppal-color);
 }
+
+/* ____________________ Galeria ____________________ */
+.gallery {
+  margin-top: 2rem;
+  height: 100vh;
+  background-color: var(--ppal-color);
+}
+
+/* ____________________ Formulario ____________________ */
 
 /* ---------------------Utilities--------------------- */
 .box-shadow-1 {
@@ -451,7 +464,7 @@ p {
   width: 100%;
   height: 5rem;
   padding: 1rem;
-  background-color: var(--ppal-color-hover);
+  background-color: var(--ppal-color);
 }
 
 .container > .menu-logo {
@@ -476,7 +489,7 @@ p {
   }
 
   .header {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 }
 /* ---------------------Site Style--------------------- */

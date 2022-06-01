@@ -16,4 +16,9 @@
     $btnMenu.lastElementChild.classList.add("none");
     $menu.classList.remove("is-active");
   });
-})(document); 
+})(document);
+
+/* ____________GALERIA____________ */
+((d) => {
+  
+})(document);
