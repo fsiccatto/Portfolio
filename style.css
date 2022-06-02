@@ -510,6 +510,55 @@ p {
 
 /* ____________________ Formulario ____________________ */
 
+.contact {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  background-color: #e6e6e6;
+}
+.contact-form {
+  margin-top: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+  min-width: 60%;
+  max-width: 90%;
+  padding: 2em;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  background-color: var(--ppal-color);
+  color: var(--font-color);
+  font-family: var(--font-sec);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: .5rem 0 2rem;
+  padding: .5rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  font-family: var(--font-sec);
+  font-weight: 300;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: var(--sec-color);
+  background-color: var(--font-color);
+}
+
+.contact-form input[type="submit"] {
+  margin-bottom: 0;
+  background-color: var(--sec-color);
+  color: var(--ppal-color);
+  transition: transform 0.5s ease, letter-spacing 0.5s ease, font-size 0.5s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+  transform: scale(1.05);
+  letter-spacing: 6px;
+  font-size: 1.5rem;
+}
 
 
 /* ---------------------Utilities--------------------- */

@@ -133,15 +133,15 @@
   <section id="contact" class="contact">
     <article class="contact-form">
       <form action="" class="form">
-        <label for="name" class="label-form">Name</label>
-        <input type="text" name="name" placeholder="Name" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
-        <label for="email" class="label-form">Email</label>
-        <input type="email" name="email" placeholder="Email" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+        <label for="name" class="form-label">Name</label>
+        <input type="text" name="name" class="form-input" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" required>
+        <label for="email" class="form-label">Email</label>
+        <input type="email" name="email" class="form-input" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
         <textarea name="" id="comments" cols="30" rows="10" placeholder="Your comments" data-pattern required></textarea>
         <div class="contact-form-loader">
           <img src="" alt="">
         </div>
-        <input type="submit" class="btn" value="Submit">
+        <input type="submit" class="btn" value="Enviar">
       </form>
     </article>
     <article class="contact-cards">
