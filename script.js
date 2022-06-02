@@ -50,3 +50,48 @@
     }
   });
 })(document);
+
+/* __________FORMULARIO_______________ */
+((d) => {
+  const $form = d.querySelector(".contact-form"),
+    $inputs = d.querySelectorAll(".contact-form [required]");
+
+  d.addEventListener("keyup", (e) => {
+    if (e.target.matches(".contact-form [required]")) {
+      let $input = e.target,
+        pattern = $input.pattern || $input.dataset.pattern; //Patron para los inputs y para el textarea
+      // console.log($input, pattern);
+
+      if (pattern && $input.value !== "") {
+        console.log("Tiene patron");
+        let regExp = new RegExp(pattern);
+        return !regExp.exec($input.value) //Si no cumple con la expReg
+          ? d.getElementById($input.name).classList.add("is-active") //El id del $input.name es el span, si cumple agregamos el "is-active"
+          : d.getElementById($input.name).classList.remove("is-active");
+      }
+      if (!pattern) {
+        console.log("NO tiene patron");
+        return $input.value === "" //si el valor del input no tiene nada...
+          ? d.getElementById($input.name).classList.add("is-active")
+          : d.getElementById($input.name).classList.remove("is-active");
+      }
+    }
+  });
+
+  //Herramienta para dar el submit
+  d.addEventListener("submit", (e) => {
+    // e.preventDefault();
+    // alert("Enviando Formulario...");
+    const $loader = d.querySelector(".contact-form-loader"),
+      $response = d.querySelector(".contact-form-response");
+
+    $loader.classList.remove("none");
+
+    setTimeout(() => {
+      $loader.classList.add("none");
+      $response.classList.remove("none");
+      $form.reset();
+      setTimeout(() => $response.classList.add("none"), 2000);
+    }, 2000);
+  });
+})(document);

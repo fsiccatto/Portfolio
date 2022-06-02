@@ -543,7 +543,8 @@ p {
   font-weight: 300;
   letter-spacing: 2px;
   cursor: pointer;
-  color: var(--sec-color);
+  resize: none;
+  color: var(--ppal-color);
   background-color: var(--font-color);
 }
 
@@ -560,6 +561,24 @@ p {
   font-size: 1.5rem;
 }
 
+.contact-form [required]:valid { /* Validaciones de campos requeridos */
+  border: thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
+}
+
+/* ___Loader___ */
+.contact-form-loader,
+.contact-form-response {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.none {
+  display: none;
+}
 
 /* ---------------------Utilities--------------------- */
 .box-shadow-1 {
