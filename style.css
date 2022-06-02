@@ -129,7 +129,7 @@ p {
 }
 
 @media screen and (min-width: 768px) {
-  
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -217,7 +217,7 @@ p {
 
 .aboutme-name {
   position: relative;
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 2rem, 5rem);
   font-weight: 700;
   width: 100%;
   z-index: 100;
@@ -228,7 +228,7 @@ p {
 .aboutme-name::before{
   content: "";
   width: 100%;
-  height: 60%;
+  height: 65%;
   display: block;
   position: absolute;
   top: 2rem; /* por el margin top */
@@ -245,7 +245,7 @@ p {
 
 .aboutme-dev {
   position: relative;
-  font-size: 1.3rem;
+  font-size: 1rem;
   z-index: 100;
   text-align: center;
 }
@@ -286,7 +286,7 @@ p {
 .aboutme-icons .fa-brands{
   position: relative;
   margin: 0 0.2em;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 0 0.4em;
 }
 
@@ -437,20 +437,27 @@ p {
   margin-top: 2rem;
   position: relative;
   height: 100vh;
-  background-color: var(--ppal-color);
   width: 100%;
+  background-color: var(--ppal-color);
+  background-image: url(assets/imgs/slides/Rompecabezas.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: luminosity;
+  background-attachment: fixed;
 }
 
 .gallery .gallery-slides {
   position: relative;
-  height: 400px;
+  height: 80%;
+  width: 100%;
 }
 
 .gallery-slide {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 12.5%;
+  left: 5%;
+  width: 95%;
   height: 100%;
   opacity: 0;
   visibility: hidden;
@@ -462,6 +469,7 @@ p {
   width: inherit;
   object-fit: cover;
   object-position: 50% 0%;
+  border-radius: .5rem;
 }
 
 .gallery-slide.active {
@@ -469,7 +477,7 @@ p {
   visibility: visible;
 }
 
-.gallery-btns{
+.gallery-buttons{
   position: absolute;
   width: 100%;
   top: calc(50% - 2rem);
@@ -481,21 +489,28 @@ p {
 
 .gallery a {
   display: block;
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  border: thin solid #000;
   text-decoration: none;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--sec-color);
   transition: all 0.3s ease;
 }
 
-.gallery a:hover {
-  color: #4d4d4d;
+.gallery-buttons svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  fill: var(--font-color);
+}
+
+.gallery-buttons svg:hover {
+  z-index: -1; /* Para que se pueda targuetear el boton */
 }
 
 /* ____________________ Formulario ____________________ */
+
+
 
 /* ---------------------Utilities--------------------- */
 .box-shadow-1 {
@@ -535,17 +550,47 @@ p {
 }
 
 @media screen and (min-width: 768px) {
+  .aboutme-name {
+    font-size: clamp(2rem, 5vw, 4rem);
+  }
+
+  .aboutme-dev {
+    font-size: 1.5rem;
+  }
+
+  .aboutme-icons .fa-brands{
+    font-size: 2.5rem;
+  }
+  
   .aboutme-hobbies {
     grid-template-columns: repeat(2, minmax(15rem, 25rem));
   }
+
+  .gallery-slide {
+    left: 25%;
+    width: 70%;
+  }
 }
 @media screen and (min-width: 1024px) {
+  .aboutme-name {
+    font-size: clamp(3rem, 5vw, 5rem);
+  }
+
+  .aboutme-dev {
+    font-size: 2rem;
+  }
+
   .aboutme-hobbies {
     grid-template-columns: repeat(4, minmax(15rem, 1fr));
   }
 
   .header {
     padding: 1rem;
+  }
+
+  .gallery-slide {
+    left: 25%;
+    width: 70%;
   }
 }
 /* ---------------------Site Style--------------------- */
