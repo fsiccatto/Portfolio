@@ -57,8 +57,8 @@ const d = document,
 
 /* ________________FORMULARIO__________________ */
 ((d) => {
-  const $form = d.querySelector(".contact-form"),
-    $inputs = d.querySelectorAll(".contact-form [required]");
+  const $form = d.querySelector(".form"),
+    $inputs = d.querySelectorAll(".form [required]");
 
   d.addEventListener("keyup", (e) => {
     if (e.target.matches(".contact-form [required]")) {

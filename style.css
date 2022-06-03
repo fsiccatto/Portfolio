@@ -4,7 +4,6 @@
   --ppal-color: #111010;
   --sec-color: #f0b530;
   --third-color: #183153;
-  --fourth-color: #f0b530;
   --font-color: #fff;
   --font-ppal: 'Raleway', sans-serif;
   --font-sec: 'Bebas Neue', cursive;
@@ -154,7 +153,7 @@ p {
 
   .menu a {
     font-size: 1.5rem;
-    padding: 0 1rem;
+    padding: .5rem 1rem;
     width: 100%;
     text-transform: uppercase;
   }
@@ -550,6 +549,10 @@ p {
   background-color: var(--font-color);
 }
 
+.contact-form label {
+  cursor: pointer;
+}
+
 .contact-form input[type="submit"] {
   margin-bottom: 0;
   background-color: var(--sec-color);
@@ -601,15 +604,18 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 1rem 2rem;
 }
 
-.card > i,
-.card > a{
+.card > i{
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: var(--sec-color);
   transition: none;
+}
+
+.card .info-card a {
+  color: var(--third-color);
 }
 
 .card > h4 {
@@ -649,7 +655,7 @@ p {
   background-color: var(--sec-color);
 }
 
-/* __________Dark Mode________ */
+/* __________Buttons________ */
 .button-tool {
   position: fixed;
   bottom: .2rem;
