@@ -513,8 +513,11 @@ p {
 .contact {
   margin-top: 2rem;
   padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 1px solid red;
   background-color: #e6e6e6;
 }
+
 .contact-form {
   margin-top: 1rem;
   margin-right: auto;
@@ -580,6 +583,48 @@ p {
   display: none;
 }
 
+/* ___Cards___ */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 22rem));
+  align-items: center;
+  justify-content: center;
+  margin: 2rem .5rem;
+  padding: 0 .5rem;
+  gap: 2rem;
+  border: 1px solid red;
+}
+
+.card {
+  border: 3px solid var(--ppal-color);
+  box-shadow: 2px 2px 2px 2px var(--ppal-color);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 2rem;
+}
+
+.card > i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--sec-color);
+}
+
+.card > h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-sec);
+  letter-spacing: 2px;
+}
+
+.card > p {
+  margin: 1rem 0;
+  padding: 0;
+}
+
 /* ---------------------Utilities--------------------- */
 .box-shadow-1 {
   box-shadow: 0.2rem 0.2rem 0.5rem var(--ppal-color);
@@ -638,6 +683,10 @@ p {
     left: 25%;
     width: 70%;
   }
+
+  .contact-cards {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 22rem));
+  }
 }
 @media screen and (min-width: 1024px) {
   .aboutme-name {
@@ -649,7 +698,7 @@ p {
   }
 
   .aboutme-hobbies {
-    grid-template-columns: repeat(4, minmax(15rem, 1fr));
+    grid-template-columns: 20rem;
   }
 
   .header {
@@ -659,6 +708,10 @@ p {
   .gallery-slide {
     left: 25%;
     width: 70%;
+  }
+
+  .contact-cards {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 18rem));
   }
 }
 /* ---------------------Site Style--------------------- */
