@@ -514,7 +514,6 @@ p {
   margin-top: 2rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  border: 1px solid red;
   background-color: #e6e6e6;
 }
 
@@ -592,7 +591,6 @@ p {
   margin: 2rem .5rem;
   padding: 0 .5rem;
   gap: 2rem;
-  border: 1px solid red;
 }
 
 .card {
@@ -623,6 +621,53 @@ p {
 .card > p {
   margin: 1rem 0;
   padding: 0;
+}
+
+/* ______________Footer________________ */
+.social-container {
+  display: flex;
+  background-color: var(--ppal-color);
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.social-container .social-link {
+  font-size: 2rem;
+  color: var(--font-color);
+}
+
+.site-by {
+  font-size: 1.5rem;
+  color: var(--font-color);
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: var(--font-sec);
+  background-color: var(--sec-color);
+}
+
+/* __________Dark Mode________ */
+.button-tool {
+  position: fixed;
+  bottom: .2rem;
+  right: .2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  z-index: 100;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease;
+  color: var(--font-color);
+  background: var(--third-color);
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* ---------------------Utilities--------------------- */
@@ -685,7 +730,12 @@ p {
   }
 
   .contact-cards {
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 22rem));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 20rem));
+  }
+
+  .button-tool {
+    width: 3rem;
+    height: 3rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -698,7 +748,7 @@ p {
   }
 
   .aboutme-hobbies {
-    grid-template-columns: 20rem;
+    grid-template-columns: repeat(4, minmax(20%, 1fr));
   }
 
   .header {
@@ -711,7 +761,12 @@ p {
   }
 
   .contact-cards {
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 18rem));
+    grid-template-columns: repeat(auto-fit, minmax(1rem, 1fr));
+  }
+
+  .button-tool {
+    width: 3rem;
+    height: 3rem;
   }
 }
 /* ---------------------Site Style--------------------- */
