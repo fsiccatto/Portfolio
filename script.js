@@ -121,3 +121,7 @@ const d = document,
     }
   });
 })(document);
+
+/* function goto($hashtag){ -> Funcion para ir a una seccion
+  d.location = "index.html#" + $hashtag;
+} */
